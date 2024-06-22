@@ -7,6 +7,9 @@ function generateTiles(tilesNumber) {
         for (i = 0; i < tilesNumber; i++) {
             const div = document.createElement("div");
             div.classList.add("tile");
+            div.addEventListener("mouseover", function (e) {
+                changeColor(e);
+            });
 
             row.appendChild(div);
         }
@@ -30,5 +33,9 @@ function deleteTiles() {
     });
 }
 
-generateRows(64);
-generateTiles(64);
+function changeColor(e) {
+    e.target.style.backgroundColor = "pink";
+}
+
+generateRows(16);
+generateTiles(16);
