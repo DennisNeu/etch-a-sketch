@@ -1,4 +1,8 @@
 const container = document.querySelector(".grid-container");
+const button = document.querySelector("#reset");
+
+button.addEventListener("click", regenerate);
+
 
 function generateTiles(tilesNumber) {
     const rows = document.querySelectorAll(".row");
@@ -25,12 +29,31 @@ function generateRows(rowsNumber) {
     }
 }
 
-function deleteTiles() {
-    const tiles = document.querySelectorAll(".tile");
+function deleteRows() {
+    const rows = document.querySelectorAll(".row");
 
-    tiles.forEach(tile => {
-        container.removeChild(tile);
+    rows.forEach(row => {
+        container.removeChild(row);
     });
+}
+
+function promptUser() {
+    let rows = prompt("How many squares per side? Max. 100");
+
+    while (isNaN(rows) || rows < 0 || rows > 100) {
+        rows = prompt("How many squares per side? Max. 100");
+    }
+
+
+    return rows;
+}
+
+function regenerate() {
+    rows = promptUser();
+
+    deleteRows();
+    generateRows(rows);
+    generateTiles(rows);
 }
 
 function changeColor(e) {
