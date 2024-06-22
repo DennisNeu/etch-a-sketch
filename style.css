@@ -8,15 +8,21 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex: 1;
+
 }
 
 h1 {
   text-align: center;
   padding: 8px;  
+  background-color: white;
 }
 
 body {
     height: 100vh;
+    background-color: lightcyan;
+    display: flex;
+    flex-direction: column;
 }
 
 .tile {
@@ -45,4 +51,10 @@ body {
 .controls button {
     font-size: large;
     padding: 4px;
+}
+
+footer {
+    margin-top: auto;
+    background-color: white;
+    padding: 8px;
 }
