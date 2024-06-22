@@ -38,3 +38,12 @@ body {
     border: solid 1px black;
     flex-direction: column;
 }
+
+.controls {
+    padding: 10px;
+}
+
+.controls button {
+    font-size: large;
+    padding: 4px;
+}
