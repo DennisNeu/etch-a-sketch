@@ -57,7 +57,14 @@ function regenerate() {
 }
 
 function changeColor(e) {
-    e.target.style.backgroundColor = "pink";
+    e.target.style.backgroundColor = generateRandomColor();
+}
+
+function generateRandomColor() {
+    const r = Math.round(Math.random() * 255);
+    const g = Math.round(Math.random() * 255);
+    const b = Math.round(Math.random() * 255);
+    return `rgb(${r}, ${g}, ${b})`;
 }
 
 generateRows(16);
